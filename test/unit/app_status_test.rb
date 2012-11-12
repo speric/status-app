@@ -31,4 +31,12 @@ class AppStatusTest < ActiveSupport::TestCase
     app_status = AppStatus.new
     assert !app_status.save
   end
+
+  test "new status with no status and a status message gets previous status" do
+    app_status_with_status = AppStatus.new(:status => "UP", :status_message => "Checking in")
+    app_status_with_status.save
+    app_status_with_no_status = AppStatus.new(:status_message => "No change")
+    app_status_with_no_status.save
+    assert_equal app_status_with_status.status, app_status_with_no_status.status
+  end
 end
