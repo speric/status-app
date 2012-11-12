@@ -1,28 +1,29 @@
-#status-app
+#Litmus Interview Task
 
-Litmus interview task.
-
-**Set-up**
+##Set-up
 
 1 - Check out status-app from GitHub
 
-`$ git clone git@github.com:speric/status-app.git`
-
-`$ cd status-app`
+```
+$ git clone git@github.com:speric/status-app.git
+$ cd status-app
+```
 
 2 - Update `config/database.yml` with the proper credentials for your local db
 
 3 - Run setup script
-
-`$ ./app-setup.sh`
+```
+$ ./app-setup.sh
+```
 
 4 - Start local server
-
-`$ rails server`
+```
+$ rails server
+```
 
 5 - Navigate to [http://localhost:3000](http://localhost:3000)
 
-**Usage**
+##Usage
 
 TODO
 
