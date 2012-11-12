@@ -1,0 +1,9 @@
+<h2>Litmus App Status</h2>
+<% @statuses.each do |s| %>
+  <div class="status">
+    <p><b><%= s.status %></b> - <%= s.created_at %></p>
+    <% unless s.status_message.blank? %>
+      <%= s.status_message %>
+    <% end %>
+  </div>
+<% end %>
