@@ -11,9 +11,9 @@ $ cd status-app
 
 2 - Update `config/database.yml` with the proper credentials for your local db
 
-3 - Run setup script
+3 - Run setup script (install gems via Bundler, creates local dbs, seeds db with initial data)
 ```
-$ ./app-setup.sh
+$ sh app-setup.sh
 ```
 
 4 - Start local server

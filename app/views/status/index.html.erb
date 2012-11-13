@@ -1,9 +1,42 @@
-<h2>Litmus App Status</h2>
-<% @statuses.each do |s| %>
-  <div class="status">
-    <p><b><%= s.status %></b> - <%= s.created_at %></p>
-    <% unless s.status_message.blank? %>
-      <%= s.status_message %>
-    <% end %>
+<% current_status = @statuses.first %>
+
+<div class="row">
+  <div class="span12" align="center">
+		<div class="row">
+			<div class="span2">&nbsp;</div>
+		  <div class="span8" align="center">
+		    <div class="well">
+		      <h3>Current Status: <%= h current_status.status %></h2> 
+			    As Of <%= current_status.pretty_timestamp %><br/>
+	        <i><%= h current_status.status_message %></i>
+		    </div>
+		  </div>
+		  <div class="span2">&nbsp;</div>
+    </div>
   </div>
-<% end %>
+</div>
+
+<div class="row">
+  <div class="span12" align="center">
+		<p><i>Page refreshes automatically every 30 seconds, or you can:</i></p>
+		<%= link_to "Reload Page", root_url, :class => "btn btn-success" %>
+
+    <center><h3>Last 10 Status Updates</h3></center>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12" align="center">
+		<% @statuses[1..10].each do |s| %>
+		<div class="row">
+			<div class="span2">&nbsp;</div>
+		  <div class="span8" align="center">
+		    <div class="well">
+		      <b><%= h s.status %></b> On <%= s.pretty_timestamp %><br/>
+		      <i><%= h s.status_message %></i>
+		    </div>
+		  </div>
+		  <div class="span2">&nbsp;</div>
+		<% end %>
+  </div>
+</div>

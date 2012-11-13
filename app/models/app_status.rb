@@ -7,10 +7,14 @@ class AppStatus < ActiveRecord::Base
 
   attr_accessible :status, :status_message
 
+  def pretty_timestamp
+    self.created_at.strftime("%B %d, %Y %I:%M%p EST")
+  end
+
   private
 
   def set_status_if_no_status_given
     last_status = AppStatus.last
     self.status = last_status.status unless last_status.nil?
-  end
+  end  
 end
