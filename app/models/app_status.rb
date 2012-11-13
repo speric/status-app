@@ -2,7 +2,7 @@ class AppStatus < ActiveRecord::Base
   validates :status, :inclusion => { :in => %w(UP DOWN), :message => "%{value} is not a valid status" }, :allow_nil => true
   validates :status, :presence => { :message => "status or status_message is required" }, :if => Proc.new { |app_status| app_status.status_message.blank? }
 
-  before_save :set_status_if_no_status_given, :if => Proc.new { |app_status| app_status.status.blank? }
+  before_save :use_last_status_if_no_status_given, :if => Proc.new { |app_status| app_status.status.blank? }
 
   attr_accessible :status, :status_message
 
@@ -12,8 +12,7 @@ class AppStatus < ActiveRecord::Base
 
   private
 
-  def set_status_if_no_status_given
-    last_status = AppStatus.last
-    self.status = last_status.status unless last_status.nil?
+  def use_last_status_if_no_status_given
+    self.status = AppStatus.last.status
   end  
 end
