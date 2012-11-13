@@ -1,6 +1,6 @@
 StatusApp::Application.routes.draw do
   resource :status
-  root :to => 'status#index'
+  root :to => 'statuses#index'
 
   # See how all your routes lay out with "rake routes"
 

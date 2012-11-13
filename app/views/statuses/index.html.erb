@@ -18,7 +18,7 @@
 
 <div class="row">
   <div class="span12" align="center">
-		<p><i>Page refreshes automatically every 30 seconds, or you can:</i></p>
+		<p><i>Page refreshes automatically every 30 seconds, or you can manually:</i></p>
 		<%= link_to "Reload Page", root_url, :class => "btn btn-success" %>
 
     <center><h3>Last 10 Status Updates</h3></center>
@@ -27,8 +27,8 @@
 
 <div class="row">
   <div class="span12" align="center">
-		<% @statuses[1..10].each do |s| %>
-		<div class="row">
+	<% @statuses[1..10].each do |s| %>
+	  <div class="row">
 			<div class="span2">&nbsp;</div>
 		  <div class="span8" align="center">
 		    <div class="well">
@@ -37,6 +37,7 @@
 		    </div>
 		  </div>
 		  <div class="span2">&nbsp;</div>
-		<% end %>
+	  </div>
+	<% end %>
   </div>
 </div>
