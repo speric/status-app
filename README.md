@@ -9,7 +9,7 @@ $ git clone git@github.com:speric/status-app.git
 $ cd status-app
 ```
 
-2 - Update `config/database.yml` with the proper credentials for your local db
+2 - Create `config/database.yml` (blank one [here](https://gist.github.com/4063763)) with the proper credentials for your local db
 
 3 - Run setup script (install gems via Bundler, creates local dbs, seeds db with initial data)
 ```
