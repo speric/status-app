@@ -25,7 +25,7 @@ $ rails server
 
 ##Usage
 
-App status can updated via cURL.  Valid `status` values are `UP` or `DOWN`.  You can also send a `status_message`. Either a `status` or `status_message` must be present in the request.  If `status` is empty, the current status of the application will remain unchanged. Valid requests will return an `HTTP 200`, requests with errors will return an `HTTP 422`.
+App status can updated via `curl`.  Valid `status` values are `UP` or `DOWN`.  You can also send a `status_message`. Either a `status` or `status_message` must be present in the request.  If `status` is empty, the current status of the application will remain unchanged. Valid requests will return an `HTTP 200`, requests with errors will return an `HTTP 422`.
 
 **Update status, no message**
 ```

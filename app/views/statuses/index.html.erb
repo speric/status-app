@@ -6,9 +6,9 @@
 			<div class="span2">&nbsp;</div>
 		  <div class="span8" align="center">
 		    <div class="well">
-		      <h3>Current Status: <%= h current_status.status %></h2> 
+		      <h3>Current Status: <span id="current_status"><%= h current_status.status %></span></h3> 
 			    As Of <%= current_status.pretty_timestamp %><br/>
-	        <i><%= h current_status.status_message %></i>
+	        <span id="current_message"><i><%= h current_status.status_message %></i></span>
 		    </div>
 		  </div>
 		  <div class="span2">&nbsp;</div>
