@@ -35,11 +35,13 @@ HTTP/1.1 200 OK
 Content-Length: 127
 ...
 {
-  "id":20,
-  "status":"UP",
-  "status_message":null,
-  "created_at":"2012-11-12T20:44:55-05:00",
-  "updated_at":"2012-11-12T20:44:55-05:00"
+  "app_status":{
+    "id":20,
+    "status":"UP",
+    "status_message":null,
+    "created_at":"2012-11-12T20:44:55-05:00",
+    "updated_at":"2012-11-12T20:44:55-05:00"
+  }
 }
 ```
 
@@ -51,15 +53,17 @@ HTTP/1.1 200 OK
 Content-Length: 150
 ...
 {
-  "id":21,
-  "status":"UP",
-  "status_message":"24 hours with no downtime",
-  "created_at":"2012-11-12T20:50:03-05:00",
-  "updated_at":"2012-11-12T20:50:03-05:00"
+  "app_status":{
+    "id":21,
+    "status":"UP",
+    "status_message":"24 hours with no downtime",
+    "created_at":"2012-11-12T20:50:03-05:00",
+    "updated_at":"2012-11-12T20:50:03-05:00"
+  }
 }
 ```
-
 **Update status, invalid status**
+
 ```
 $ curl -i -d "app_status[status]=CHAOS" http://localhost:3000/status
 

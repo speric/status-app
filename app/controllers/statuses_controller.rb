@@ -7,7 +7,7 @@ class StatusesController < ApplicationController
   def create 
     @status = AppStatus.new(params[:app_status])
     if @status.save
-      render :json => @status.to_json, :status => 200
+      render :json => {:app_status => @status}, :status => 200
     else
       render :json => {:errors => @status.errors}, :status => 422
     end
