@@ -40,6 +40,6 @@ class StatusesControllerTest < ActionController::TestCase
     post :create
     assert_response :unprocessable_entity
     body = JSON.parse(response.body)
-    assert_equal body["errors"]["status"].first, "status is required if no status_message is set"
+    assert_equal body["errors"]["status"].first, "status or status_message is required"
   end
 end

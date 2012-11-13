@@ -25,7 +25,7 @@ $ rails server
 
 ##Usage
 
-App status can updated via `curl`.  Valid `status` values are `UP` or `DOWN`.  You can also send a `status_message`. Either a `status` or `status_message` must be present in the request.  If `status` is empty, the current status of the application will remain unchanged. Valid requests will return an `HTTP 200`, requests with errors will return an `HTTP 422`.
+App status can be updated via `curl`.  Valid `status` values are `UP` or `DOWN`.  You can also send a `status_message`. Either a `status` or `status_message` must be present in the request.  If `status` is empty, the current status of the application will remain unchanged. Valid requests will return an `HTTP 200`, requests with errors will return an `HTTP 422`.
 
 **Update status, no message**
 ```
@@ -43,7 +43,7 @@ Content-Length: 127
 }
 ```
 
-**Update status, no message**
+**Update status_message, no status**
 ```
 $ curl -i -d "app_status[status_message]=24 hours with no downtime" http://localhost:3000/status
 
@@ -69,6 +69,12 @@ Content-Length: 53
 {
   "errors":{"status":["CHAOS is not a valid status"]}
 }
+```
+
+**Tests**
+```
+$ rake db:test:load
+$ rake test
 ```
 
 Developed by [Eric Farkas](mailto:eric@prudentiadigital.com) for Litmus.
