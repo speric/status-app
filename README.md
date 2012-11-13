@@ -36,7 +36,7 @@ Content-Length: 127
 ...
 {
   "app_status":{
-    "id":20,
+    "id":19,
     "status":"UP",
     "status_message":"24 hrs no downtime",
     "created_at":"2012-11-12T20:44:55-05:00",
