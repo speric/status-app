@@ -25,7 +25,25 @@ $ rails server
 
 ##Usage
 
-App status can be updated via `curl`.  Valid `status` values are `UP` or `DOWN`.  You can also send a `status_message`. Either a `status` or `status_message` must be present in the request.  If `status` is empty, the current status of the application will remain unchanged. Valid requests will return an `HTTP 200`, requests with errors will return an `HTTP 422`.
+The app starts with an `UP` status.  App status can be updated via `curl`.  Responses are in JSON format.  Valid `status` values are `UP` or `DOWN`.  You can also send a `status_message`. Either a `status` or `status_message` must be present in the request.  If `status` is empty, the current status of the application will remain unchanged. Valid requests will return an `HTTP 200`, requests with errors will return an `HTTP 422`.
+
+**Update status with message**
+```
+$ curl -i -d "app_status[status]=UP" -d "app_status[status_message]=24 hrs no downtime" http://localhost:3000/status
+
+HTTP/1.1 200 OK 
+Content-Length: 127
+...
+{
+  "app_status":{
+    "id":20,
+    "status":"UP",
+    "status_message":"24 hrs no downtime",
+    "created_at":"2012-11-12T20:44:55-05:00",
+    "updated_at":"2012-11-12T20:44:55-05:00"
+  }
+}
+```
 
 **Update status, no message**
 ```
@@ -45,7 +63,7 @@ Content-Length: 127
 }
 ```
 
-**Update status_message, no status**
+**Update status_message, no status (current state of app is UP)**
 ```
 $ curl -i -d "app_status[status_message]=24 hours with no downtime" http://localhost:3000/status
 
