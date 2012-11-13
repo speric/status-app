@@ -13,7 +13,7 @@ $ cd status-app
 
 3 - Run setup script (install gems via Bundler, creates local dbs, seeds db with initial data)
 ```
-$ sh app-setup.sh
+$ ./app-setup.sh
 ```
 
 4 - Start local server
