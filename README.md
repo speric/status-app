@@ -98,5 +98,3 @@ Content-Length: 53
 $ rake db:test:load
 $ rake test
 ```
-
-Developed by [Eric Farkas](mailto:eric@prudentiadigital.com) for Litmus.
