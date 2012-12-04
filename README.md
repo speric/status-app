@@ -1,4 +1,4 @@
-#Litmus Interview Task
+I wrote this small app as part of an interview task.
 
 ##Set-up
 
