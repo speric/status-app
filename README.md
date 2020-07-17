@@ -1,6 +1,6 @@
 I wrote this small app as part of an interview task.
 
-##Set-up
+## Set-up
 
 1 - Check out status-app from GitHub
 
@@ -23,7 +23,7 @@ $ rails server
 
 5 - Navigate to [http://localhost:3000](http://localhost:3000)
 
-##Usage
+## Usage
 
 The app starts with an `UP` status.  App status can be updated via `curl`.  Responses are in JSON format.  Valid `status` values are `UP` or `DOWN`.  You can also send a `status_message`. Either a `status` or `status_message` must be present in the request.  If `status` is empty, the current status of the application will remain unchanged. Valid requests will return an `HTTP 200`, requests with errors will return an `HTTP 422`.
 
